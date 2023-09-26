@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+make clean && make mrproper
 export PATH=$(pwd)/toolchain/clang/host/linux-x86/clang-r450784d/bin:$PATH
 export PATH=$(pwd)/toolchain/build/kernel/build-tools/path/linux-x86/:$PATH
 export HOSTCFLAGS="--sysroot=$(pwd)/toolchain/build/kernel/build-tools/sysroot -I$(pwd)/toolchain/prebuilts/kernel-build-tools/linux-x86/include"
@@ -14,3 +16,4 @@ export ARCH=arm64
 export TARGET_SOC=s5e8535
 make a14x_defconfig
 make
+
